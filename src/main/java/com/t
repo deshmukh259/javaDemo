@@ -1,0 +1,27 @@
+#!/bin/bash
+
+mkdir -p ./app/fresh/service
+mkdir -p ./app/fresh/service/logs
+mkdir -p ./app/fresh/service/config
+mkdir -p ./app/fresh/service/bin
+mkdir -p ./app/fresh/service/awsConfig
+mkdir -p ./app/fresh/service/awsScripts
+
+
+
+mv ./ops/ecs/runApp ./app/fresh/service/bin
+mv ./src/main/resources/*.yml ./app/fresh/service/config
+mv ./ops/ecs/*.json ./app/fresh/service/awsConfig
+mv ./ops/ecsScripts/*.sh ./app/fresh/service/awsScripts
+mv ./ops/ecsScripts/config.cfg ./app/fresh/service/awsScripts
+mv ./ops/docker/* .
+
+perl -i -pe "s/FB_MASTER_KEY/"${FB_MASTER_KEY}"/g" ./app/fresh/service/config/application_*.yml
+
+echo ${FB_MASTER_KEY}
+
+mv target/supplychain-freshbackbone-stockmovement-retry-ecstask-1.0.jar ./app/fresh/service/bin
+
+chmod -R 770 app/
+
+tar -zcf supplychain-freshbackbone-stockmovement-retry-ecstask-1.0.tar.gz ./app Dockerfile
