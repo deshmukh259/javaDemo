@@ -59,8 +59,6 @@ public class collections8 {
             Optional<Emp> reduce = values.stream().reduce((emp5, emp1) -> emp5.getN().length() < emp1.getN().length()? emp5:emp1);
             System.out.println(reduce.get());
 
-
-
         } catch (Exception e) {
             e.printStackTrace();
         }
