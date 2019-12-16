@@ -16,6 +16,14 @@
         <jacoco.version>0.7.5.201505241946</jacoco.version>
     </properties>
     <dependencies>
+        <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-junit -->
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-junit</artifactId>
+            <version>4.8.0</version>
+            <scope>test</scope>
+        </dependency>
+
         <dependency>
             <groupId>org.jasypt</groupId>
             <artifactId>jasypt</artifactId>
@@ -327,5 +335,5 @@
 
         </plugins>
     </build>
-    
+
 </project>
