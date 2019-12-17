@@ -1,4 +1,4 @@
-package com.hack;
+package com.hackerrank;
 
 import java.util.Scanner;
 
