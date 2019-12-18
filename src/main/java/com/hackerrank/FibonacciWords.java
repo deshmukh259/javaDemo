@@ -1,8 +1,6 @@
 package com.hackerrank;
 
-import java.util.Arrays;
 import java.util.LinkedList;
-import java.util.List;
 import java.util.Scanner;
 
 public class FibonacciWords {
@@ -28,13 +26,12 @@ public class FibonacciWords {
                 b = c;
             }
             //c.ch
-            c.toCharArray()[44l];
             LinkedList<Character> list = new LinkedList<>();
-            for(long l = 0 ; l<c.length();l++){
+            for (long l = 0; l < c.length(); l++) {
                 //list.add()
             }
             //System.out.println(s.get(n-1));
-            StringBuilder sb= new StringBuilder(c);
+            StringBuilder sb = new StringBuilder(c);
             //while (sb)
 
         }
