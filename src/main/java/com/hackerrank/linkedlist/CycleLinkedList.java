@@ -31,6 +31,7 @@ public class CycleLinkedList {
             if (next.next == null) return false;
             t2 = next;
         }
+
         return true;
 
     }
