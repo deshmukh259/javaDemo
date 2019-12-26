@@ -53,10 +53,10 @@ public class collections8 {
             System.out.println(collect1);
             System.out.println("------------min/max---------");
 
-            Emp emp = values.stream().filter(e->e.getId()%6==0).max(Comparator.comparing(e -> e.getN().length())).get();
+            Emp emp = values.stream().filter(e -> e.getId() % 6 == 0).max(Comparator.comparing(e -> e.getN().length())).get();
             System.out.println(emp);
             System.out.println("---reduce---");
-            Optional<Emp> reduce = values.stream().reduce((emp5, emp1) -> emp5.getN().length() < emp1.getN().length()? emp5:emp1);
+            Optional<Emp> reduce = values.stream().reduce((emp5, emp1) -> emp5.getN().length() < emp1.getN().length() ? emp5 : emp1);
             System.out.println(reduce.get());
 
         } catch (Exception e) {

@@ -3,15 +3,6 @@ package com.hackerrank.linkedlist;
 public class InsertLinkedList {
 
 
-    static class SinglyLinkedListNode {
-        public SinglyLinkedListNode(int data) {
-            this.data = data;
-        }
-
-        int data;
-        SinglyLinkedListNode next;
-    }
-
     static SinglyLinkedListNode insertNodeAtTail(SinglyLinkedListNode head, int data) {
 
         SinglyLinkedListNode singlyLinkedListNode = new SinglyLinkedListNode(data);
@@ -25,5 +16,13 @@ public class InsertLinkedList {
         }
         temp.next = singlyLinkedListNode;
         return head;
+    }
+
+    static class SinglyLinkedListNode {
+        int data;
+        SinglyLinkedListNode next;
+        public SinglyLinkedListNode(int data) {
+            this.data = data;
+        }
     }
 }

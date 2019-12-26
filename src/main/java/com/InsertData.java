@@ -30,12 +30,11 @@ public class InsertData {
             String selectQueryForJobId = "SELECT ct.job_id,ct.EXTERNAL_PO_NR FROM NB_MO_INTG_PO_CTRL ct WHERE ct.job_id = ?";
 
             PreparedStatement preparedStatement = con.prepareStatement(selectQueryForJobId);
-                preparedStatement.setString(1, "123");
+            preparedStatement.setString(1, "123");
 
-                ResultSet rs = preparedStatement.executeQuery();
+            ResultSet rs = preparedStatement.executeQuery();
 
             System.out.println(rs.next());
-
 
 
 //            driverClass: oracle.jdbc.OracleDriver

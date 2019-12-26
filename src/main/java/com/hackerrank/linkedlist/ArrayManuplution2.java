@@ -9,6 +9,8 @@ import java.util.Scanner;
 public class ArrayManuplution2 {
 
 
+    private static final Scanner scanner = new Scanner(System.in);
+
     public static void main1(String[] args) {
         int a[][] = new int[][]{
                 {1, 2, 100},
@@ -25,9 +27,6 @@ public class ArrayManuplution2 {
 
         arrayManipulation(10, a);
     }
-
-    private static final Scanner scanner = new Scanner(System.in);
-
 
     public static void main(String[] args) throws IOException {
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
@@ -54,11 +53,11 @@ public class ArrayManuplution2 {
 
             Arrays.fill(a, queries[i][0] - 1, queries[i][1], queries[i][0] - 1 + queries[i][2]);
 
-    }
+        }
         for (int i = 0; i < a.length; i++) {
-        if (a[i] > sum)
-            sum = a[i];
-    }
+            if (a[i] > sum)
+                sum = a[i];
+        }
         System.out.println(sum);
 
         long result = sum;

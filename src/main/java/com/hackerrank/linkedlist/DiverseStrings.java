@@ -1,8 +1,5 @@
 package com.hackerrank.linkedlist;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class DiverseStrings {
 
     public static void main(String[] args) {
@@ -29,7 +26,7 @@ public class DiverseStrings {
 
                 if (valT == valTN)
                     continue;
-                if(valT == valTN +1);
+                if (valT == valTN + 1) ;
 
 
             }

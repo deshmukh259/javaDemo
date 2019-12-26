@@ -4,7 +4,7 @@ import java.sql.*;
 import java.util.Scanner;
 
 public class demo33 {
-    public static void main1(String[] args)  {
+    public static void main1(String[] args) {
         Connection con = null;
         try {
             Class.forName("oracle.jdbc.OracleDriver");
@@ -23,7 +23,7 @@ public class demo33 {
             e.printStackTrace();
         } catch (SQLException e) {
             e.printStackTrace();
-        }finally {
+        } finally {
             try {
                 con.close();
             } catch (SQLException e) {
@@ -34,29 +34,31 @@ public class demo33 {
         }
 
     }
+
     public static void main(String[] args) {
-    Scanner scan = new Scanner(System.in);
-    int i = scan.nextInt();
-    double d = Double.parseDouble(scan.nextLine());
-    String s = scan.nextLine();
+        Scanner scan = new Scanner(System.in);
+        int i = scan.nextInt();
+        double d = Double.parseDouble(scan.nextLine());
+        String s = scan.nextLine();
 
-    // Write your code here.
+        // Write your code here.
 
-    System.out.println("String: " + s);
-    System.out.println("Double: " + d);
-    System.out.println("Int: " + i);
+        System.out.println("String: " + s);
+        System.out.println("Double: " + d);
+        System.out.println("Int: " + i);
     }
+
     public static void main2(String[] args) {
-    	int N = 24;
-    	if(N%2!=0 ){
+        int N = 24;
+        if (N % 2 != 0) {
             System.out.println("Weird");
         }
-        if((N%2==0 && N>5 && N<21)){
+        if ((N % 2 == 0 && N > 5 && N < 21)) {
             System.out.println("Not Weird");
         }
-        if((N%2==0 && N>1 && N<6) || (N/2==0 && N>20)){
+        if ((N % 2 == 0 && N > 1 && N < 6) || (N / 2 == 0 && N > 20)) {
             System.out.println("Not Weird");
         }
 
-	}
+    }
 }

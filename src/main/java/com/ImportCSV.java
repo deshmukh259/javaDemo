@@ -14,16 +14,17 @@ import java.sql.SQLException;
 public class ImportCSV {
 
     public static void main1(String[] args) {
-        String s= "q,q";
-        String []f=s.split(",");
+        String s = "q,q";
+        String[] f = s.split(",");
         System.out.println(f.length);
     }
+
     public static void main(String[] args) {
         try {
 
             Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres", "postgres", "postgres");
 
-            PreparedStatement ps =con.prepareStatement("select *from nse_daily where Symbol = ?");
+            PreparedStatement ps = con.prepareStatement("select *from nse_daily where Symbol = ?");
             ps.setString(1, "s");
             System.out.println(ps);
             PgConnection copyOperationConnection = con.unwrap(PgConnection.class);

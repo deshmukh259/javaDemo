@@ -2,15 +2,6 @@ package com.hackerrank.linkedlist;
 
 public class MeargeLinkedList {
 
-    static class SinglyLinkedListNode {
-        int data;
-        SinglyLinkedListNode next;
-
-        public SinglyLinkedListNode(int data) {
-            this.data = data;
-        }
-    }
-
     public static void main(String[] args) {
         int i = 0, j = 0;
         SinglyLinkedListNode s1 = new SinglyLinkedListNode(0);
@@ -39,7 +30,6 @@ public class MeargeLinkedList {
         }
 
     }
-
 
     static SinglyLinkedListNode mergeLists(SinglyLinkedListNode head1, SinglyLinkedListNode head2) {
         while (head2 != null) {
@@ -72,5 +62,14 @@ public class MeargeLinkedList {
             head2 = head2.next;
         }
         return head1;
+    }
+
+    static class SinglyLinkedListNode {
+        int data;
+        SinglyLinkedListNode next;
+
+        public SinglyLinkedListNode(int data) {
+            this.data = data;
+        }
     }
 }

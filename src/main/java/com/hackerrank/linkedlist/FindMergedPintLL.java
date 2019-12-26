@@ -3,16 +3,7 @@ package com.hackerrank.linkedlist;
 public class FindMergedPintLL {
 
 
-    static class
-    SinglyLinkedListNode {
-        int data;
-        SinglyLinkedListNode next;
-
-        public SinglyLinkedListNode(int data) {
-            this.data = data;
-        }
-    }
-// *****
+    // *****
     static int findMergNode(SinglyLinkedListNode head1, SinglyLinkedListNode head2) {
         if (head1 == null || head2 == null) return 0;
         while (head1 != null) {
@@ -26,5 +17,15 @@ public class FindMergedPintLL {
             head1 = head1.next;
         }
         return 0;
+    }
+
+    static class
+    SinglyLinkedListNode {
+        int data;
+        SinglyLinkedListNode next;
+
+        public SinglyLinkedListNode(int data) {
+            this.data = data;
+        }
     }
 }

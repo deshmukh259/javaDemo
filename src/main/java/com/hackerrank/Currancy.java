@@ -18,15 +18,16 @@ public class Currancy {
         String symbol = cur1.getSymbol(locale);
         System.out.println("Currency symbol is = " + symbol);
     }
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         double payment = scanner.nextDouble();
         scanner.close();
 
-        System.out.println("US: " + DecimalFormat.getCurrencyInstance(Locale.US).format( payment));
-        System.out.println("India: " + DecimalFormat.getCurrencyInstance(new Locale("en","IN")).format( payment));
-        System.out.println("China: " + DecimalFormat.getCurrencyInstance(Locale.CHINA).format( payment));
-        System.out.println("France: " + DecimalFormat.getCurrencyInstance(Locale.FRANCE).format( payment));
+        System.out.println("US: " + DecimalFormat.getCurrencyInstance(Locale.US).format(payment));
+        System.out.println("India: " + DecimalFormat.getCurrencyInstance(new Locale("en", "IN")).format(payment));
+        System.out.println("China: " + DecimalFormat.getCurrencyInstance(Locale.CHINA).format(payment));
+        System.out.println("France: " + DecimalFormat.getCurrencyInstance(Locale.FRANCE).format(payment));
     }
 
     public static void main3(String[] args) {

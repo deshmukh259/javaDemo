@@ -3,15 +3,6 @@ package com.hackerrank.linkedlist;
 public class RemoveDupliLL {
 
 
-    static class SinglyLinkedListNode {
-        int data;
-        SinglyLinkedListNode next;
-
-        public SinglyLinkedListNode(int data) {
-            this.data = data;
-        }
-    }
-
     public static void main(String[] args) {
 
 
@@ -31,7 +22,8 @@ public class RemoveDupliLL {
 
         removeDuplicates(s3);
     }
-// *****
+
+    // *****
     static SinglyLinkedListNode removeDuplicates(SinglyLinkedListNode head) {
         SinglyLinkedListNode t = head;
         SinglyLinkedListNode p = new SinglyLinkedListNode(Integer.MIN_VALUE);
@@ -45,5 +37,14 @@ public class RemoveDupliLL {
             t = t.next;
         }
         return head;
+    }
+
+    static class SinglyLinkedListNode {
+        int data;
+        SinglyLinkedListNode next;
+
+        public SinglyLinkedListNode(int data) {
+            this.data = data;
+        }
     }
 }

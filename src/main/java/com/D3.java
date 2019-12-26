@@ -14,14 +14,14 @@ public class D3 {
 
     public static void main(String[] args) {
 
-        int i=200;
-        double d=i;
+        int i = 200;
+        double d = i;
         System.out.println(Long.MAX_VALUE);
 
         //double v = 9.0;
         Object v = 9.0;
         //int b = (int)(double) v;
-       // System.out.println(Double.valueOf(String.valueOf(v)).intValue());
+        // System.out.println(Double.valueOf(String.valueOf(v)).intValue());
 
     }
 

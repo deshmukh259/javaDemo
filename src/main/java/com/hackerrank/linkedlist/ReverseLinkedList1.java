@@ -3,11 +3,6 @@ package com.hackerrank.linkedlist;
 public class ReverseLinkedList1 {
 
 
-    static class SinglyLinkedListNode {
-        int data;
-        SinglyLinkedListNode next;
-    }
-
     public static void main(String[] args) {
 
         int i = 0, j = 0;
@@ -66,5 +61,10 @@ public class ReverseLinkedList1 {
 
         return pre;
 
+    }
+
+    static class SinglyLinkedListNode {
+        int data;
+        SinglyLinkedListNode next;
     }
 }

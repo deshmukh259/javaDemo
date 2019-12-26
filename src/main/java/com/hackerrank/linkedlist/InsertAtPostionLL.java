@@ -2,12 +2,6 @@ package com.hackerrank.linkedlist;
 
 public class InsertAtPostionLL {
 
-    static class SinglyLinkedListNode {
-        int data;
-        SinglyLinkedListNode next;
-    }
-
-
     static SinglyLinkedListNode insertNodeAtPosition(SinglyLinkedListNode head, int data, int position) {
 
 
@@ -28,5 +22,10 @@ public class InsertAtPostionLL {
         pre.next = singlyLinkedListNode.next = temp;
         return head;
 
+    }
+
+    static class SinglyLinkedListNode {
+        int data;
+        SinglyLinkedListNode next;
     }
 }

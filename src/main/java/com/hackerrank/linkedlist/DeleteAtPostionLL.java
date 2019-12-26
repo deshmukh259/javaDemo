@@ -2,12 +2,6 @@ package com.hackerrank.linkedlist;
 
 public class DeleteAtPostionLL {
 
-    static class SinglyLinkedListNode {
-        int data;
-        SinglyLinkedListNode next;
-    }
-
-
     static SinglyLinkedListNode deleteNodeAtPosition(SinglyLinkedListNode head, int position) {
 
 
@@ -31,8 +25,13 @@ public class DeleteAtPostionLL {
             temp = temp.next;
             position--;
         }
-        pre.next  = temp.next;
+        pre.next = temp.next;
         return head;
 
+    }
+
+    static class SinglyLinkedListNode {
+        int data;
+        SinglyLinkedListNode next;
     }
 }

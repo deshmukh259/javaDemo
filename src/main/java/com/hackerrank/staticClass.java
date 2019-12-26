@@ -16,7 +16,7 @@ public class staticClass {
             if (B < 0 || H < 0)
                 throw new RuntimeException();
             flag = true;
-            if (B > 100 || H > 100 || B == 0 || H ==0 )
+            if (B > 100 || H > 100 || B == 0 || H == 0)
                 flag = false;
 
 

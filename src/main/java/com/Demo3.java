@@ -8,8 +8,8 @@ public class Demo3 {
     public static final String FILE_DATE_FORMAT = "yyyyMMddHHmmss";
 
     public static void main(String[] args) {
-        for (int i = 0;i<15;i++) {
-            if(System.currentTimeMillis() == System.currentTimeMillis())
+        for (int i = 0; i < 15; i++) {
+            if (System.currentTimeMillis() == System.currentTimeMillis())
                 System.out.println("true");
             else {
                 System.out.println("false");

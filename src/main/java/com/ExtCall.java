@@ -276,7 +276,7 @@ public class ExtCall {
                 "                        {  \n" +
                 "                           \"itemId\":\"\",\n" +
                 "                           \"packId\":\"108285394\",\n" +
-                "                           \"shippedQuantity\":"+i+",\n" +
+                "                           \"shippedQuantity\":" + i + ",\n" +
                 "                           \"shippedQuantityType\":\"CS\",\n" +
                 "                           \"shippedWeight\":555,\n" +
                 "                           \"shippedWeightType\":\"grams\"\n" +
@@ -285,7 +285,7 @@ public class ExtCall {
                 "                                                {  \n" +
                 "                           \"itemId\":\"\",\n" +
                 "                           \"packId\":\"108285395\",\n" +
-                "                           \"shippedQuantity\":"+i+",\n" +
+                "                           \"shippedQuantity\":" + i + ",\n" +
                 "                           \"shippedQuantityType\":\"CS\",\n" +
                 "                           \"shippedWeight\":555,\n" +
                 "                           \"shippedWeightType\":\"grams\"\n" +
@@ -323,7 +323,7 @@ public class ExtCall {
                 "                        {  \n" +
                 "                           \"itemId\":\"\",\n" +
                 "                           \"packId\":\"108285394\",\n" +
-                "                           \"shippedQuantity\":"+i+",\n" +
+                "                           \"shippedQuantity\":" + i + ",\n" +
                 "                           \"shippedQuantityType\":\"CS\",\n" +
                 "                           \"shippedWeight\":333,\n" +
                 "                           \"shippedWeightType\":\"grams\"\n" +
@@ -332,7 +332,7 @@ public class ExtCall {
                 "                                                {  \n" +
                 "                           \"itemId\":\"\",\n" +
                 "                           \"packId\":\"108285395\",\n" +
-                "                           \"shippedQuantity\":"+i+",\n" +
+                "                           \"shippedQuantity\":" + i + ",\n" +
                 "                           \"shippedQuantityType\":\"CS\",\n" +
                 "                           \"shippedWeight\":333,\n" +
                 "                           \"shippedWeightType\":\"grams\"\n" +

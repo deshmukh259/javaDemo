@@ -1,11 +1,5 @@
 package com;
 
-import com.fasterxml.jackson.databind.deser.std.DateDeserializers;
-
-import java.sql.Date;
-import java.time.LocalDateTime;
-import java.util.Calendar;
-
 public class Date1 {
 
     public static void main(String[] args) {
