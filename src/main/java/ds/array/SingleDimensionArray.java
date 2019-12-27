@@ -9,6 +9,25 @@ public class SingleDimensionArray {
 
     }
 
+    public static void main(String[] args) {
+        SingleDimensionArray s = new SingleDimensionArray(10);
+        s.traverseArray();
+        s.insert(5, 55);
+        s.insert(6, 55);
+        s.insert(7, 55);
+        s.insert(8, 55);
+        s.traverseArray();
+        s.deleteValueFromArray(5);
+        s.deleteValueFromArray(7);
+        s.deleteValueFromArray(8);
+        s.traverseArray();
+        s.accessingCell(5);
+        s.searchInAnArray(55);
+        s.deleteThisArray();
+        s.traverseArray();
+
+    }
+
     // Print the array
     public void traverseArray() {
 
@@ -41,8 +60,8 @@ public class SingleDimensionArray {
                 return;
             }
         }
-		System.out.println("not found");
-	}
+        System.out.println("not found");
+    }
 
     //Delete value from given Array
     public void deleteValueFromArray(int deleteValueFromThisCell) {
@@ -52,24 +71,5 @@ public class SingleDimensionArray {
     //Delete the entire Array
     public void deleteThisArray() {
         arr = null;
-    }
-
-    public static void main(String[] args) {
-        SingleDimensionArray s = new SingleDimensionArray(10);
-        s.traverseArray();
-        s.insert(5, 55);
-        s.insert(6, 55);
-        s.insert(7, 55);
-        s.insert(8, 55);
-        s.traverseArray();
-        s.deleteValueFromArray(5);
-        s.deleteValueFromArray(7);
-        s.deleteValueFromArray(8);
-        s.traverseArray();
-        s.accessingCell(5);
-        s.searchInAnArray(55);
-        s.deleteThisArray();
-        s.traverseArray();
-
     }
 }//end of class

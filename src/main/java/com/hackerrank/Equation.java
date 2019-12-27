@@ -15,7 +15,7 @@ public class Equation {
             System.out.print(s + " ");
             for (int j = 1; j < n; j++) {
 
-                int x = (int) (Math.pow(2,j ) * b);
+                int x = (int) (Math.pow(2, j) * b);
                 s = s + x;
                 System.out.print(s + " ");
             }

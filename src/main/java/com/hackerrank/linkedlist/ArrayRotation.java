@@ -1,8 +1,5 @@
 package com.hackerrank.linkedlist;
 
-import java.util.Arrays;
-import java.util.List;
-
 public class ArrayRotation {
 
 
@@ -16,7 +13,7 @@ public class ArrayRotation {
 
         String[] aItems = "1 2 3 4 5".split(" ");
         //scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
-        if(aItems.length <1 || aItems.length >100000){
+        if (aItems.length < 1 || aItems.length > 100000) {
             return;
         }
         for (int i = 0; i < n; i++) {
@@ -31,7 +28,7 @@ public class ArrayRotation {
             a[n + i] = a[i];
             a[i] = 0;
         }
-            for (int i = d; i < a.length; i++) {
+        for (int i = d; i < a.length; i++) {
             System.out.print(a[i] + " ");
         }
     }

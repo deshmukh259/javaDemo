@@ -9,11 +9,11 @@ public class calenderr {
     public static void main(String[] args) {
         //int day = 18, month = 12, year = 2019; // wed
         //12 25 2059
-        int day =25, month = 12, year = 2059;
+        int day = 25, month = 12, year = 2059;
         //int day = 5, month = 8, year = 2015; // wed ..
         //int day = 1, month = 1, year = 2019;//tues  ..
         //08 05 2015
-        if ( day >0 && day <32 && month > 0 && month < 13 && year > 2000 && year < 3000) {
+        if (day > 0 && day < 32 && month > 0 && month < 13 && year > 2000 && year < 3000) {
             Calendar c = Calendar.getInstance();
             c.clear();
             c.set(year, month - 1, day, 0, 0, 0);

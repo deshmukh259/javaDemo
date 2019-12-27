@@ -23,7 +23,7 @@ public class Date33 {
                 DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss"));
         //DateTimeFormatter.ISO_OFFSET_DATE_TIME
         //ZonedDateTime startZonedDT = ZonedDateTime.ofLocal(date1, ZoneOffset.of("+1"), null);
-        ZonedDateTime startZonedDT = ZonedDateTime.ofLocal(date1, ZoneOffset.systemDefault(),null);
+        ZonedDateTime startZonedDT = ZonedDateTime.ofLocal(date1, ZoneOffset.systemDefault(), null);
         System.out.println(startZonedDT.format(DateTimeFormatter.ISO_OFFSET_DATE_TIME));
         //System.out.println(startZonedDT.format(DateTimeFormatter.ofPattern("YYYY-MM-dd'T'HH:mm:ss+00:00")));
         //Instant instant = date1.toInstant();

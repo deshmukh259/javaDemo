@@ -6,11 +6,6 @@ public class SimpleLinkedList {
     // Complete the printLinkedList function below.
 
 
-    static class SinglyLinkedListNode {
-        int data;
-        SinglyLinkedListNode next;
-    }
-
     public static void main(String[] args) {
 
     }
@@ -22,5 +17,10 @@ public class SimpleLinkedList {
                 head = head.next;
             }
         }
+    }
+
+    static class SinglyLinkedListNode {
+        int data;
+        SinglyLinkedListNode next;
     }
 }

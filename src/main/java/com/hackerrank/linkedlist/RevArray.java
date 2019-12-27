@@ -16,7 +16,7 @@ public class RevArray {
     }
 
     public static void main(String[] args) {
-        int[] a = {1, 23, 4,55,77,2};
+        int[] a = {1, 23, 4, 55, 77, 2};
         a = reverseArray(a);
         System.out.println(a.toString());
 

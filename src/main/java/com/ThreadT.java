@@ -5,7 +5,7 @@ public class ThreadT {
 
         Runnable r = () -> v(1000);
         new Thread(r).start();
-         r = () -> v(2000);
+        r = () -> v(2000);
         new Thread(r).start();
     }
 
@@ -13,9 +13,9 @@ public class ThreadT {
 
         try {
             Thread.sleep(50);
-            System.out.println(" in v " +vv+"   "+ System.currentTimeMillis());
+            System.out.println(" in v " + vv + "   " + System.currentTimeMillis());
             Thread.sleep(5000);
-            System.out.println(" out v " +vv+"   "+ System.currentTimeMillis());
+            System.out.println(" out v " + vv + "   " + System.currentTimeMillis());
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
