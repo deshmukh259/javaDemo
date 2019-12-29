@@ -84,17 +84,11 @@ public class InsertAtPositionDLL {
                 n.prev = t;
                 return head;
             }
-
             t = t.next;
         }
         return head;
-
-
     }
-
-
     private static final Scanner scanner = new Scanner(System.in);
-
     public static void main(String[] args) throws IOException {
 
 
