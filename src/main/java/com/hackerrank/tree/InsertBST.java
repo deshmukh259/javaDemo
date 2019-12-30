@@ -60,10 +60,10 @@ class InsertBST {
     }
 
     public static void main(String[] args) {
-        int kk[] = {4, 2, 7, 1, 3};
+        int kk[] = {4, 2, 7, 1, 3,23,45,1,89};
         int t = 0;
         Node root = null;
-        while (t < 5) {
+        while (t < kk.length) {
             int data = kk[t++];
             root = insert(root, data);
         }
