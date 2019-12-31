@@ -4,20 +4,20 @@ package com.hackerrank.tree;
 import java.util.LinkedList;
 import java.util.Queue;
 
-class Node {
-    Node left;
-    Node right;
-    int data;
 
-    Node(int data) {
-        this.data = data;
-        left = null;
-        right = null;
+
+public  class OrderLevelTree {
+   static class Node {
+        Node left;
+        Node right;
+        int data;
+
+        Node(int data) {
+            this.data = data;
+            left = null;
+            right = null;
+        }
     }
-}
-
-class Solution {
-
     /*
 
     class Node

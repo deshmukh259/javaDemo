@@ -10,17 +10,16 @@ public class DelNodeBST {
     //case 3# if node have 2 child then find successor/precedncer and replace it
 
 
-    static class Node {
-        Node left;
-        Node right;
-        int data;
 
-        Node(int data) {
+
+/*    static class Node<T extends Comparable<?>> {
+        public Node<T> left, right;
+        public T data;
+
+        public Node(T data) {
             this.data = data;
-            left = null;
-            right = null;
         }
-    }
+    }*/
 
     public static Node deleteNode(Node root, int data) {
         if (root == null) return null;
@@ -131,15 +130,15 @@ public class DelNodeBST {
             root = insert(root, data);
         }
         System.out.println("------------");
-        preOrder(root);
+        //preOrder(root);
+        BTreePrinterTest.display(root);
         deleteNode(root, 1);
         System.out.println("------------");
-        preOrder(root);
+        BTreePrinterTest.display(root);
         System.out.println("------------");
-        preOrder(root);
         deleteNode(root, 3);
         System.out.println("------------");
-        preOrder(root);
+        BTreePrinterTest.display(root);
     }
 
 

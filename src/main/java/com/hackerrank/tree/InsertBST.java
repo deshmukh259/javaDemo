@@ -2,17 +2,6 @@ package com.hackerrank.tree;
 
 class InsertBST {
 
-    static class Node {
-        Node left;
-        Node right;
-        int data;
-
-        Node(int data) {
-            this.data = data;
-            left = null;
-            right = null;
-        }
-    }
 
     public static void preOrder(Node root) {
 
@@ -60,7 +49,7 @@ class InsertBST {
     }
 
     public static void main(String[] args) {
-        int kk[] = {4, 2, 7, 1, 3,23,45,1,89};
+        int kk[] = {4, 2, 7, 1, 3, 23, 45, 1, 89};
         int t = 0;
         Node root = null;
         while (t < kk.length) {
@@ -69,5 +58,23 @@ class InsertBST {
         }
         System.out.println("------------");
         preOrder(root);
+    }
+
+    public static Node getFilledRoot(int jj[]) {
+        int kk[] = null;
+
+        if (jj == null) {
+            kk = new int[]{4, 2, 7, 1, 3, 23, 45, 1, 89};
+        } else {
+            kk = jj;
+        }
+        int t = 0;
+        Node root = null;
+        while (t < kk.length) {
+            int data = kk[t++];
+            root = insert(root, data);
+        }
+        return root;
+
     }
 }

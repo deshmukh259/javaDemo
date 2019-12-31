@@ -13,17 +13,6 @@ class HeightOfBT {
         Node right;
     */
 
- static   class Node {
-        Node left;
-        Node right;
-        int data;
-
-        Node(int data) {
-            this.data = data;
-            left = null;
-            right = null;
-        }
-    }
 
     public static int height(Node root) {
 
@@ -31,10 +20,10 @@ class HeightOfBT {
 
         int l = height(root.left);
         int r = height(root.right);
-        if(l> r){
-            return l+1;
-        }else
-            return r+1;
+        if (l > r) {
+            return l + 1;
+        } else
+            return r + 1;
 
     }
 
