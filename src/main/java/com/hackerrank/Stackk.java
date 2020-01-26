@@ -28,7 +28,7 @@ public class Stackk {
                 System.out.println(false);
             else
                 System.out.println(true);
-        }
+                        }
 
-    }
-}
+                        }
+                        }
