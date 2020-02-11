@@ -4,14 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Fibbo {
-    static  int li[] = new int[1000];
+    static  long li[] = new long[6000];
 
     public static void main(String[] args) {
-        System.out.println(fibbo(1));
+        System.out.println(fibbo(5000));
 
     }
 
-    static int fibbo(int n) {
+    static long fibbo(int n) {
 
         if (li[n] == 0) {
             if (n == 1) return 1;
