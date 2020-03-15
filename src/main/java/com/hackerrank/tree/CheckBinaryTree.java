@@ -13,7 +13,7 @@ public class CheckBinaryTree {
         System.out.println(checkBST(filledRoot));
     }
 
-    static boolean checkBST(Node root) {
+    static boolean checkBST(Node root) { // this is one soln
 
         if (root == null) return true;
         checkBST(root.right);
@@ -23,7 +23,7 @@ public class CheckBinaryTree {
         return true;
     }
 
-    static boolean checkBST2(Node root) {
+    static boolean checkBST2(Node root) { // this another
 
         Queue<Node> queue = new LinkedList<>();
         Node temp = root;
@@ -43,8 +43,8 @@ public class CheckBinaryTree {
                 Node right = poll.right;
                 boolean ri = right != null ? poll.data > right.data : false;
                 boolean le = left != null ? poll.data < left.data: false;
-                System.out.println("right.data : "+(right != null ?  right.data:"$"));
-                System.out.println("left.data : "+(left != null ?  left.data:"$"));
+                //System.out.println("right.data : "+(right != null ?  right.data:"$"));
+                //System.out.println("left.data : "+(left != null ?  left.data:"$"));
                 if (ri || le) {
                     f = true;
                     break;
@@ -56,8 +56,8 @@ public class CheckBinaryTree {
                 } else {
                     int tlsum = left != null ? poll.data + left.data : lsum;
                     int trsum = right != null ? poll.data + right.data : rsum;
-                    System.out.println("tlsum " + tlsum);
-                    System.out.println("trsum " + trsum);
+                    //System.out.println("tlsum " + tlsum);
+                    //System.out.println("trsum " + trsum);
                     if (tlsum > lsum || trsum < rsum) {
                         f = true;
                         break;
