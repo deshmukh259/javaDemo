@@ -36,7 +36,7 @@ public class CheckBinaryTree {
         while (!queue.isEmpty()) {
             Node poll = queue.poll();
 
-            int x = r;
+           //int x = r;
             if (poll != null) {
                 //System.out.println("poll.data : " + poll.data);
                 Node left = poll.left;
