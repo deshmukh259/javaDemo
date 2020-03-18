@@ -15,11 +15,15 @@ public class CheckBinaryTree {
 
     static boolean checkBST(Node root) { // this is one soln
 
+        return one(root,Integer.MIN_VALUE,Integer.MAX_VALUE);
+    }
+
+    private static boolean one(Node root, int min,int max) {
         if (root == null) return true;
-        checkBST(root.right);
-        if (root.data > root.right.data) return false;
-        checkBST(root.left);
-        if (root.data < root.left.data) return false;
+        one(root.right,root.data,max);
+        if (root.data < min || root.data > max) return false;
+        one(root.left,min,root.data);
+        if (root.data < min || root.data > max) return false;
         return true;
     }
 
