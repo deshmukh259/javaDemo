@@ -8,6 +8,10 @@ public class ForCacheOrdered {
 
     public static void main(String[] args) {
 
+        m();
+    }
+
+    private static void m() {
         long x = System.currentTimeMillis();
         Integer[] intArray = {1, 2, 3, 4, 5, 6, 7, 8 };
         List<Integer> listOfIntegers =

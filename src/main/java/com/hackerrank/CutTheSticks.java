@@ -20,6 +20,7 @@ public class CutTheSticks {
 
         }
 
+        return null;
     }
 
 }
