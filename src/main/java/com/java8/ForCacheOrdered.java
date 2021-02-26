@@ -20,7 +20,7 @@ public class ForCacheOrdered {
                 .stream().sorted()
                 .forEach(e -> {
                     try {
-                        Thread.sleep(1);
+                        Thread.sleep(100);
                     } catch (InterruptedException ex) {
                         ex.printStackTrace();
                     }

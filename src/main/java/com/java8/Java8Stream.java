@@ -18,7 +18,7 @@ public class Java8Stream {
         st();
         List<Integer> list = Arrays.asList(1, 2, 3, 4, 5, 5, 6, 6, 5, 4, 4, 3, 3, 3, 3);
         Stream<Integer> integerStream = list.stream()
-                .filter(e -> e > 5);
+                .filter(e -> e > 6);
         println("--" + integerStream.
                 reduce(0, Integer::sum));
 
