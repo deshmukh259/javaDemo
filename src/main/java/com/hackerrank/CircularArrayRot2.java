@@ -11,6 +11,7 @@ public class CircularArrayRot2 {
 
         int[] t = new int[a.length];
 
+
         for (int i = 0, c = k; i < a.length; i++, c++) {
             if (c >= a.length) c = 0;
             t[c] = a[i];

@@ -22,6 +22,9 @@ public class ReverseString {
         l.add(s4);
         l.add(44l);
         System.out.println(l);
+        System.out.println("hello" +
+                "");
+
         class inn{
             final Integer s= 9;
             Integer c = 8;
