@@ -14,8 +14,12 @@ public class FlatMapDemo {
         e.getChildList().add(new Child("C3", 13));
         e.getChildList().add(new Child("C4", 14));
         parents.add(e);
+
+        Parent e1 = new Parent();
+        e1.getChildList().add(new Child("C11", 11));
+        parents.add(e1);
         parents.stream()
-                .flatMap(u -> e.getChildList()
+                .flatMap(u -> u.getChildList()
                         .stream()).forEach(d -> System.out.println(d.getName()));
     }
 }
