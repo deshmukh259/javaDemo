@@ -8,7 +8,7 @@ import java.util.stream.Stream;
 public class Groupby1 {
 
     public static void main(String[] args) {
-        List<String> li = Arrays.asList("one","two","three","four","five","six","seven","eight");
+        List<String> li = Arrays.asList("one", "two", "three", "four", "five", "six", "seven", "eight");
 
         Map<Integer, List<String>> collect = li.stream().collect(Collectors.groupingBy(String::length));
         System.out.println("collect = " + collect);
@@ -19,19 +19,20 @@ public class Groupby1 {
         Optional<Map.Entry<Integer, List<String>>> max = stream.max(Comparator.comparing(en -> en.getKey()));
         System.out.println("max = " + max);
 
-        List<String> li1 = Arrays.asList("one","two","three","four","five","six","seven","eight","one","nine","nine","three","nnmnmnmnnm","three");
+        List<String> li1 = Arrays.asList("one", "two", "three", "four", "five", "six", "seven", "eight", "one", "nine", "nine", "three", "nnmnmnmnnm", "three"
+                , "q", "ww", "ww");
         //Supplier<List> sup =   ArrayList::new;
         List<String> collect3 = li1.stream().filter(e -> e.length() > 3).collect(Collectors.toList());
         System.out.println("collect3 = " + collect3);
-    
+
         //max length and number
 
 
         Optional<Map.Entry<Integer, List<String>>> max1 = li1.stream()
                 .collect(
-                        Collectors.groupingBy(e -> e.length(),Collectors.toList()))
-                        .entrySet().stream()
-                        .max(Map.Entry.comparingByKey());
+                        Collectors.groupingBy(e -> e.length(), Collectors.toList()))
+                .entrySet().stream()
+                .max(Map.Entry.comparingByKey());
 
 
         System.out.println("max1 = " + max1);
@@ -39,7 +40,7 @@ public class Groupby1 {
         //max number of duplicate
 
         Optional<Map.Entry<String, Long>> max2 = li1.stream().collect(
-                Collectors.groupingBy(Function.identity(), Collectors.counting())
+                        Collectors.groupingBy(Function.identity(), Collectors.counting())
                 )
                 .entrySet().stream().max(Map.Entry.comparingByValue());
 
@@ -59,5 +60,26 @@ public class Groupby1 {
 
         System.out.println("collect4 = " + collect4);
 
+        String s = li1.stream().filter(e -> e.length() < 3).min(Comparator.naturalOrder()).get();
+        System.out.println("s = " + s);
+
+        List<Map.Entry<String, Long>> collect5 = li1.stream().collect(Collectors.groupingBy(Function.identity(),
+                Collectors.counting())).entrySet().stream().sorted(Map.Entry.comparingByValue()).collect(Collectors.toList());
+        System.out.println("collect5 = " + collect5);
+
+        Map<Integer, List<String>> collect6 = li1.stream().collect(Collectors.groupingBy(e -> e.length(), Collectors.toList()));
+        System.out.println(" collect6 = " + collect6);
+
+        li1.forEach( (String sc)-> {
+            System.out.print("  sc = " + sc);
+        });
+
+        System.out.println("\n---- = ");
+        li1.stream().forEach(xx-> System.out.print("  xx = " + xx));
+        System.out.println("\n---- = ");
+
+        ArrayList<String> collect7 = li1.stream().collect(Collectors.toCollection(ArrayList::new));
+        collect7.removeIf(e-> e.length()<=3);
+        collect7.forEach(ff-> System.out.print("  ff = " + ff));
     }
 }
