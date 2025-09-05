@@ -2,6 +2,7 @@ package com.re;
 
 import java.util.*;
 import java.util.function.Function;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -79,7 +80,9 @@ public class Groupby1 {
         System.out.println("\n---- = ");
 
         ArrayList<String> collect7 = li1.stream().collect(Collectors.toCollection(ArrayList::new));
-        collect7.removeIf(e-> e.length()<=3);
+        Predicate<String> pre= (String vv)->vv.length()<=3;
+        Predicate<String> pre1 = (String ccs)-> ccs.length() <=9;
+        collect7.removeIf(pre.and(pre1));
         collect7.forEach(ff-> System.out.print("  ff = " + ff));
     }
 }
