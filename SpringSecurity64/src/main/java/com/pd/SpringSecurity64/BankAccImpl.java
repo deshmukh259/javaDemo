@@ -17,4 +17,14 @@ public class BankAccImpl implements BankAccInterface {
     public BankAcc getById(int id) {
         return findById(id);
     }
+
+    @Override
+    public void save(BankAcc toSave) {
+
+    }
+
+    @Override
+    public void update(BankAcc toUpdate) {
+
+    }
 }

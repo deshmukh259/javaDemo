@@ -63,4 +63,22 @@ class BankAccImplTest {
         var byId = this.bankAcc.getById(1);
         assertEquals("12345",byId.getAccNumber());
     }
+
+    @Test
+    @WithMockAbc
+    void saveAccountAbc(){
+
+        BankAcc acc = new BankAcc(1,"Abc","123",444);
+        this.bankAcc.save(acc);
+    }
+
+    @Test
+    void updateDeniedWhenJo(){
+
+        BankAcc acc = new BankAcc(1,"Jo","233",33);
+
+        assertThrows(AuthorizationDeniedException.class,()->this.bankAcc.update(acc));
+
+    }
+
 }

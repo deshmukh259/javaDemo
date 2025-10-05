@@ -7,7 +7,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 
 import java.security.Principal;
 
-public class BankAccountSrviceProxy implements BankAccInterface {
+public class BankAccountSrviceProxy  {
 
     final BankAccInterface delegate;
 
@@ -15,7 +15,6 @@ public class BankAccountSrviceProxy implements BankAccInterface {
         this.delegate = delegate;
     }
 
-    @Override
     public BankAcc findById(int id) {
         BankAcc acc = delegate.findById(id);
         Principal principal = SecurityContextHolder.getContext().getAuthentication();
@@ -26,7 +25,6 @@ public class BankAccountSrviceProxy implements BankAccInterface {
         return acc;
     }
 
-    @Override
     public BankAcc getById(int id) {
         BankAcc acc = delegate.getById(id);
         Principal principal = SecurityContextHolder.getContext().getAuthentication();
