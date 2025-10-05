@@ -4,17 +4,18 @@ public class ConvertString {
 static int xx =0;
     public static void main(String[] args) {
 
-        System.out.println(convert("tableiikkkk","trblemmlllllx"));
+        System.out.println(convert("abczzxxssdd","acczzqwssxd"));
     }
 
     static int convert(String s1, String s2) {
 
+        "Abc".replace("A","z");
         return flow(s1,s2,0,0);
 
     }
 
     static int flow(String s1, String s2, int a, int b) {
-        System.out.println(++xx);
+       // System.out.println(++xx);
         if (s1.length() == a)
             return s2.length() - b;
         if (s2.length() == b)

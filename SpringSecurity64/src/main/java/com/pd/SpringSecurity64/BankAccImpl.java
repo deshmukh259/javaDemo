@@ -1,12 +1,9 @@
 package com.pd.SpringSecurity64;
 
-import org.springframework.security.authorization.AuthorizationDecision;
-import org.springframework.security.authorization.AuthorizationDeniedException;
-import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.stereotype.Service;
 
-import java.security.Principal;
-
-public final class BankAccImpl implements BankAccInterface {
+@Service
+public class BankAccImpl implements BankAccInterface {
 
 
     @Override
