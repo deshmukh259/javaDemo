@@ -73,9 +73,10 @@ class BankAccImplTest {
     }
 
     @Test
+    @WithMockJo
     void updateDeniedWhenJo(){
 
-        BankAcc acc = new BankAcc(1,"Jo","233",33);
+        BankAcc acc = new BankAcc(1,"Abc","233",33);
 
         assertThrows(AuthorizationDeniedException.class,()->this.bankAcc.update(acc));
 
