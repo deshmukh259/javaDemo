@@ -1,9 +1,10 @@
 package com.pd.SpringSecurity64;
 
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.authorization.method.HandleAuthorizationDenied;
-
+@JsonSerialize(as = BankAcc.class)
 public class BankAcc {
 
     private final int id;
