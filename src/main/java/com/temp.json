@@ -1,0 +1,8 @@
+SELECT o.orderid, o.itemid  FROM open_order_status_temp o, distribution_order d
+WHERE o.orderid = (d.distributionorderid:: TEXT)
+AND (d.distributionorderheader->>'deliveryDate')::TIMESTAMP  > ?
+AND (d.distributionorderheader->>'deliveryDate'):: TIMESTAMP  < ?
+AND (o.location, o.itemid) IN(
+SELECT o.location,o.itemid FROM open_order_status_temp o, cancel_items c
+WHERE c.storeid= o.location
+AND c.itemid = o.itemid GROUP BY o.location, o.itemid HAVING count(1) = 1)
