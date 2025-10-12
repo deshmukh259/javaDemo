@@ -26,6 +26,7 @@ public class TodoController {
 
     @GetMapping("/hello")
     public String hello(){
+        tOdoServiceDB.get("hell");
         return "Hello java";
     }
 }

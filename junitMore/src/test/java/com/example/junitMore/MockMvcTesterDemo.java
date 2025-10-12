@@ -26,4 +26,18 @@ public class MockMvcTesterDemo {
                 .contains("java");
 
     }
+
+    @Test
+    public void mmpost(){
+
+        tester.post()
+                .uri("/todo?text=ABBAAX&description=B")
+                .exchange()
+                .assertThat()
+                .hasStatus(HttpStatus.OK)
+                .bodyText()
+                .contains("B");
+
+
+    }
 }

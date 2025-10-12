@@ -15,7 +15,8 @@ public class TOdoServiceDB {
         todos.setTodoName(todo);
         todos.setTodoDesc(desc);
 
-        return todoRepository.save(todos);
+        Todos save = todoRepository.save(todos);
+        return save;
     }
 
 
