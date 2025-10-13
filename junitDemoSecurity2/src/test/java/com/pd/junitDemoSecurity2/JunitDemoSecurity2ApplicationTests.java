@@ -10,4 +10,6 @@ class JunitDemoSecurity2ApplicationTests {
 	void contextLoads() {
 	}
 
+
+	// test
 }
