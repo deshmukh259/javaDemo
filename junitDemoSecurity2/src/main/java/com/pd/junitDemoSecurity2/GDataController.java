@@ -16,7 +16,7 @@ public class GDataController {
         this.userDetailsService = userDetailsService;
     }
 
-    @GetMapping("/protected/password/{user}")
+    @GetMapping("/password/{user}")
     public String getPassword(@PathVariable("user") String user) {
 
 
