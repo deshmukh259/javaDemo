@@ -34,10 +34,10 @@ public class SecConfig {
                 .authorizeHttpRequests(reg -> {
                     reg.requestMatchers("/home", "/register/**").permitAll();
                     reg.requestMatchers("/admin/**").hasRole("ADMIN");
-                    reg.requestMatchers("/user/**").hasRole("USER");
+                    reg.requestMatchers("/user/**").hasAnyRole("USER","robot");
                     reg.anyRequest().authenticated();
                 })
-                .formLogin(httpSec -> {
+                /*.formLogin(httpSec -> {
                     httpSec.loginPage("/login")
                             .loginProcessingUrl("/login")
                             .usernameParameter("username")
@@ -48,6 +48,7 @@ public class SecConfig {
 
                 })
                 .authenticationProvider(authenticationProvider())
+  */
                 .addFilterBefore(new ProhabitFilter(), AuthenticationFilter.class)
 
                 .addFilterBefore(new RobotAuthFilter(), AuthenticationFilter.class)
