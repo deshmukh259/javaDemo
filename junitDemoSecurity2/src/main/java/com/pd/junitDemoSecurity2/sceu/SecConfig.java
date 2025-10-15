@@ -38,12 +38,19 @@ public class SecConfig {
                     reg.anyRequest().authenticated();
                 })
                 .formLogin(httpSec -> {
-                    httpSec.loginPage("/login").permitAll()
+                    httpSec.loginPage("/login")
+                            .loginProcessingUrl("/login")
+                            .usernameParameter("username")
+                            .passwordParameter("password")
+                            .permitAll()
                             .successHandler(new AuthenticationSuccessHandelr1())
                             .permitAll();
 
                 })
+                .authenticationProvider(authenticationProvider())
                 .addFilterBefore(new ProhabitFilter(), AuthenticationFilter.class)
+
+                .addFilterBefore(new RobotAuthFilter(), AuthenticationFilter.class)
                 .build();
 
     }
@@ -53,7 +60,7 @@ public class SecConfig {
         return userDetailsService;
     }
 
-    @Bean
+    //@Bean
     public AuthenticationProvider authenticationProvider() {
         DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
         provider.setUserDetailsService(userDetailsService);

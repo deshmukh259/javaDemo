@@ -22,22 +22,46 @@ public class DemoSpEL {
         //length();
         //upperLower();
 
+        //getName();
+
+
+        checkNameEq();
+
+
+    }
+
+    private static void checkNameEq() {
         GregorianCalendar gc = new GregorianCalendar();
         gc.set(1991,02,25);
-        
+
+        record Human(String name, Date dob, String address){}
+
+        Human h = new Human("P deshmukh",gc.getTime(),"Pune");
+
+
+        ExpressionParser ep = new SpelExpressionParser();
+
+        Expression expression = ep.parseExpression("name");
+
+        System.out.println("expression.getValue(\"name\") = " + expression.getValue(h));
+        Expression expression1 = ep.parseExpression("name == 'P deshmukh'");
+        System.out.println("expression.getValue(\"name\") = " + expression1.getValue(h));
+    }
+
+    private static void getName() {
+        GregorianCalendar gc = new GregorianCalendar();
+        gc.set(1991,02,25);
+
         record Person(int id, String name, String address, Date dob){}
-        
+
         Person p = new Person(1,"Purushottam","pune", gc.getTime());
-        
+
         ExpressionParser ep = new SpelExpressionParser();
 
         Expression expression = ep.parseExpression("dob");
         EvaluationContext ec = new StandardEvaluationContext(p);
 
         System.out.println("expression.getValue(ec) = " + expression.getValue(ec));
-        
-
-
     }
 
     private static void upperLower() {
