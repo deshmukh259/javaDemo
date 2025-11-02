@@ -12,6 +12,7 @@ public class ThredLocalDemo2 {
         Runnable r =()->{
 
             StringBuffer stringBuffer = local.get();
+            local.set(stringBuffer);
 
             stringBuffer.append("Name:"+Thread.currentThread().getName());
 
