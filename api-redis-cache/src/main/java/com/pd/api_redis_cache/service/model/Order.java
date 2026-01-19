@@ -1,5 +1,6 @@
 package com.pd.api_redis_cache.service.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -17,8 +18,11 @@ public class Order {
 
     @Id
     private Integer id;
+    @Column
     private String items;
+    @Column
     private double total;
+    @Column
     private String userId;
 
 }

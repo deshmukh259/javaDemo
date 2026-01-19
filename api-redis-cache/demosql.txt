@@ -4,3 +4,6 @@ items varchar(2500),
 total double precision,
 user_id varchar(255)
 );
+
+insert into public.order values(122,'shoess',4455.33,'user-1');
+insert into public.order values(1,'shoess2',4455.33,'user-1');

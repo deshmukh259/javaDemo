@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+  namespace: demo
+spec:
+  containers:
+    - name: nginx
+      image: nginx:1.14.2
+        - containerPort: 9876
+        livenessProbe:
+      resources:
+        requests:
+          cpu: 250m
+          memory: "65M"
+        limits:
+          cpu: 500m
+          memory: "130M"

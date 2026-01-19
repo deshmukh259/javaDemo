@@ -1,6 +1,8 @@
 package com.pd.api_redis_cache;
 
 import com.pd.api_redis_cache.service.OrderService;
+import com.pd.api_redis_cache.service.model.Order;
+import org.aspectj.weaver.ast.Or;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,9 +19,8 @@ public class ApiClass {
     }
 
     @GetMapping(value = "/order/{id}")
-    public String getOrder(@PathVariable Integer id){
+    public Order getOrder(@PathVariable Integer id){
 
-        orderService.getOrder(id);
-        return ""+id;
+       return orderService.getOrder(id);
     }
 }
