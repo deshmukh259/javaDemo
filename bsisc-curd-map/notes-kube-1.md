@@ -50,10 +50,41 @@
 # one of from above 3 provider controller need to install 
 
 # namespaces:
-# structure pods, logical separation. imp-> many teams 
+# structure pods, logical separation. imp-> many teams might get confuse because of many pods  
 # its a part of metadata 
 ![img_4.png](img_4.png)
 ![img_5.png](img_5.png)
+
+# ingress request flow 
+![img_6.png](img_6.png)
+
+# ingress and ingress controller install
+# ingress is object but it's not available by default
+# ingress off doc: https://kubernetes.io/docs/concepts/services-networking/ingress/
+# its api-obj manages external access to the service in cluster
+# install command:
+brew install helm
+helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
+# ingress request flow
+![img_7.png](img_7.png)
+![img_8.png](img_8.png)
+
+# ingress request flow file wise
+1: client send request to www.ursite.com/apiv1/
+2: on host matching request come to ingress controller
+3: request come in ingress.yml file and check path 
+path: /api/v1 [example]
+on match it check for service name
+4: with same name from ingress ti search service 
+5: in service .yml it check service name if matches then it goes to selectoer app: nginx 
+6: this app: nginx name will searched in deployment . yml file
+7: in deployment.yml file it will search tempalte: metadata: labels: app: nginx 
+8: from here it will call container based on how many replica we have
+
+
+helm install ingress-nginx ingress-nginx/ingress-nginx \
+--namespace ingress-nginx \
+--create-namespace
 
 
 
