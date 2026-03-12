@@ -1,3 +1,29 @@
+
+logging:
+  level:
+    org.springframework.security: TRACE
+    org.springframework.security.oauth2: TRACE
+server:
+  port: 8085
 spring:
   application:
     name: b2c-demo
+  security:
+    oauth2:
+      client:
+        registration:
+          azure:
+            client-id: ${CLIENTID}
+            client-secret: ${CLIENTSECRET}
+            authorization-grant-type: authorization_code
+            scope:
+              - openid
+              - profile
+              - User.Read
+              - email
+              - offline_access
+            redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
+            provider: azure
+        provider:
+          azure:
+            issuer-uri: https://login.microsoftonline.com/${TENANT}/v2.0
