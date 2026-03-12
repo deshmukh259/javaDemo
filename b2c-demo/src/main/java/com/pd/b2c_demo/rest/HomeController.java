@@ -1,5 +1,6 @@
 package com.pd.b2c_demo.rest;
 
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.oauth2.client.authentication.OAuth2AuthenticationToken;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -34,17 +35,15 @@ public class HomeController {
         return "dfjdfjs-sdsbds ";
     }
 
-    @GetMapping("/login/oauth2/code/azure")
+    @GetMapping("/secret")
+    @PreAuthorize("hasAuthority('APP_WRITE')") //TODO this not working because roles[its user attribute] dont supported by spring sec
+    // need to write own method to validate
     @ResponseBody
-    public String getUser3(){
-        return "dfjdfjs-sdsbds ";
+    public String secret(Principal p){
+    System.out.println("Secret api "+((OAuth2AuthenticationToken) p).getPrincipal().getAttributes());
+        return "Secret endpoint access by APP-WRITE user  "+((OAuth2AuthenticationToken)p).getPrincipal().getAttributes().get("name");
     }
 
-    @GetMapping("/login/oauth2/code")
-    @ResponseBody
-    public String getUser4(){
-        return "dfjdfjs-sdsbds ";
-    }
 
     @GetMapping("/home")
     @ResponseBody
@@ -52,6 +51,7 @@ public class HomeController {
         System.out.println("Log claims "+((OAuth2AuthenticationToken) p).getPrincipal().getAttributes());
         return "welcome home "+((OAuth2AuthenticationToken) p).getPrincipal().getAttributes().get("name");
     }
+
 
 
 }
