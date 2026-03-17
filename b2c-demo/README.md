@@ -74,4 +74,7 @@ ISS -> claim value is issuer
         iss=https://login.microsoftonline.com/9e50631b-5455-43a3-bab0-48be8b6cbd98/v2.0
         in my case above is issuer and spring will add more to above issuer uri and call to 
         idp provider to validate sig
-        
+
+security config       
+
+![img_15.png](img_15.png)
