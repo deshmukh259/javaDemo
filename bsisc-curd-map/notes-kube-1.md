@@ -7,8 +7,8 @@
 # cluster -> one or many node
 #replica -> multiple pod of same type [duplicate]
 #deplyment -> replicaSet -> multiple pod
-#update on deplymnt -> deplyment will create new replicaset
-#it will remove old pod and create new -roling update
+#update on deployment -> deployment will create new replicaset
+#it will remove old pod and create new -rolling update
 #service ? -> to visit -> open pod port mapping
 #expose the pod,
 #cluster Ip -> for internal comm, if 3 pod need intranl connectitvity
@@ -94,3 +94,5 @@ helm install ingress-nginx ingress-nginx/ingress-nginx \
 #node port service
 # ingress
 # kube config -> ~/.kube/config
+
+
