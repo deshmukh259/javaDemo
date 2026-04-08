@@ -1,0 +1,11 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: web-app-ingress
+  namespace: backend
+  annotations: nginx.ingress.kubernates.io/rewrite-target: /
+               # ann important-> why > it send request to "/"
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: localhost

@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: bsisc-curd-map
+  namespace: demo
+spec:
+  containers:
+    - name: bsisc-curd-map
+      image: bsisc-curd-map:0.0.2
+      imagePullPolicy: IfNotPresent
+      ports:
+        - containerPort: 8080
+      livenessProbe:
+        initialDelaySeconds: 5
+        periodSeconds: 5
+        timeoutSeconds: 2
+        failureThreshold: 3
+        httpGet:
+          path: /all
+          port: 8080
+      resources:
+        requests:
+          cpu: 650m
+          memory: "1000M"
+        limits:
+          cpu: 900m
+          memory: "1300M"
