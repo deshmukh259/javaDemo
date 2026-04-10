@@ -1,0 +1,7 @@
+.idea/*/*
+classes/*/*
+.idea/*
+target/**/
+UsersEXTMASZL.mygit.lock
+/target/
+/.apt_generated/

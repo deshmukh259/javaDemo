@@ -56,12 +56,6 @@
         - support rolling update and rollback 
         - its high level abstraction that manage a set of pods and provide declarative update to them like scalling and rolling update
 
-![img_5.png](img_5.png)
-
-pods -> logical wrapper on container
-inside the pod can have multiple container
-
-![img_6.png](img_6.png)
 
 
 

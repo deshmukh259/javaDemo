@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Todo — Simple App</title>
+    <style>
+        :root{--bg:#0f1724;--card:#0b1220;--muted:#9aa4b2;--accent:#06b6d4;--success:#10b981}
+        *{box-sizing:border-box}
+        body{font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background:linear-gradient(180deg,#071021 0%, #071827 100%); color:#e6eef6; margin:0; padding:24px; min-height:100vh;}
+        .container{max-width:920px;margin:0 auto}
+        header{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
+        h1{font-size:20px;margin:0}
+        .card{background:rgba(255,255,255,0.02);border-radius:12px;padding:18px;box-shadow:0 6px 18px rgba(2,6,23,0.6)}
+
+        form{display:flex;gap:8px;align-items:center}
+        input[type=text]{flex:1;padding:10px 12px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:inherit;font-size:14px}
+        button{padding:10px 14px;border-radius:8px;border:0;background:var(--accent);color:#042a2f;font-weight:600;cursor:pointer}
+        button.secondary{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+
+        .filters{display:flex;gap:8px;margin-top:12px}
+        .filters button{background:transparent;border:0;color:var(--muted);padding:6px 8px;border-radius:6px;cursor:pointer}
+        .filters button.active{color:var(--accent);font-weight:600}
+
+        ul.todo-list{list-style:none;padding:0;margin:18px 0 0}
+        li.todo{display:flex;align-items:center;gap:12px;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.02);margin-bottom:10px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent)}
+        li.todo .title{flex:1}
+        li.todo.completed .title{text-decoration:line-through;opacity:0.6;color:var(--muted)}
+        .controls{display:flex;gap:8px}
+        .tiny{padding:6px 8px;border-radius:6px;border:0;background:rgba(255,255,255,0.03);cursor:pointer}
+
+        .meta{display:flex;gap:12px;align-items:center;margin-top:12px;color:var(--muted);font-size:13px}
+
+        /* small screens */
+        @media (max-width:560px){body{padding:16px}header{flex-direction:column;align-items:flex-start;gap:10px}form{flex-direction:column}button{width:100%}.controls{flex-wrap:wrap}}
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <div>
+            <h1>Simple Todo App</h1>
+            <p style="margin:6px 0 0;color:var(--muted);font-size:13px">Add tasks, mark complete, edit, delete — stored in your browser.</p>
+        </div>
+        <div style="text-align:right;color:var(--muted);font-size:13px">Local-only • No backend</div>
+    </header>
+
+    <section class="card">
+        <form id="todo-form" aria-label="Add todo">
+            <input id="todo-input" type="text" placeholder="Add a new task (press Enter or click Add)" required autocomplete="off" />
+            <button id="add-btn">Add</button>
+            <button id="clear-completed" type="button" class="secondary">Clear Completed</button>
+        </form>
+
+        <div class="filters" role="tablist" aria-label="Filter todos">
+            <button data-filter="all" class="active">All</button>
+            <button data-filter="active">Active</button>
+            <button data-filter="completed">Completed</button>
+        </div>
+
+        <ul id="todos" class="todo-list" aria-live="polite"></ul>
+
+        <div class="meta">
+            <div id="count">0 tasks</div>
+            <div id="left" style="color:var(--muted)"></div>
+        </div>
+    </section>
+
+    <p style="margin-top:12px;color:var(--muted);font-size:12px">Pro tip: Your todos are stored in <code>localStorage</code>. Open devtools to inspect.</p>
+</div>
+
+<script>
+    // Simple Todo app (no frameworks) — stores in localStorage
+    const form = document.getElementById('todo-form');
+    const input = document.getElementById('todo-input');
+    const todosEl = document.getElementById('todos');
+    const filterButtons = document.querySelectorAll('[data-filter]');
+    const clearCompletedBtn = document.getElementById('clear-completed');
+    const countEl = document.getElementById('count');
+
+    let todos = []; // {id, title, completed, createdAt}
+    let filter = 'all';
+
+    function uid(){return Date.now().toString(36) + Math.random().toString(36).slice(2,7)}
+
+    function save(){localStorage.setItem('simple_todos_v1', JSON.stringify(todos))}
+    function load(){
